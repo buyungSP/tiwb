@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!-- head -->
+    <meta charset="utf-8">
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assets/vendors/jquery.min.js"></script>
+    <script src="assets/owlcarousel/owl.carousel.js"></script>
+    <style>
+.owl-carousel {
+  display: none;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+.owl-carousel .owl-stage {
+    position: relative;
+    -ms-touch-action: pan-Y;
+    touch-action: manipulation;
+    -moz-backface-visibility: hidden;
+}
+.owl-carousel .owl-stage:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0; 
+  }
+  .owl-carousel .owl-stage-outer {
+    position: relative;
+    overflow: hidden;
+    /* fix for flashing background */
+    -webkit-transform: translate3d(0px, 0px, 0px); 
+  }
+  .owl-carousel .owl-wrapper,
+  .owl-carousel .owl-item {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0); 
+  }
+  .owl-carousel .owl-item {
+    position: relative;
+    min-height: 1px;
+    float: left;
+    -webkit-backface-visibility: hidden;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none; 
+    text-align: center;
+  }
+  .owl-carousel.owl-loaded {
+    display: block; 
+  }
+  .owl-carousel.owl-loading {
+    opacity: 0;
+    display: block; 
+  }
+  .owl-carousel.owl-drag .owl-item {
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+  .owl-carousel.owl-grab {
+    cursor: move;
+    cursor: grab; 
+  }
+      .item{
+        padding: 5px;
+      }
+      .dot{
+        position: relative;
+        float: left;
+        padding: 5px
+      }
+      .dots{
+        height: 5px;
+        width: 5px;
+        background-color: black;
+        border-radius: 50%
+      }
+    </style>
+  </head>
+  <body>
+
+
+    <!-- body -->
+    <div class="home-demo">
+      <div class="row">
+        <div class="large-12 columns">
+          <h3>Demo</h3>
+          <div class="owl-carousel">
+            <div class="item">
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+              <div class="dot">
+                <div class="dots"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+$('.owl-carousel').owlCarousel({
+    center: true,
+    items:4,
+    loop:false,
+});
+    </script>
+
+
+    <!-- vendors -->
+    <script src="assets/vendors/highlight.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
