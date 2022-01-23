@@ -1,24 +1,28 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>HelloCordova</name>
-    <description>Sample Apache Cordova App</description>
+<widget id="twib.smooth.asia" version="3.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Mi al huda</name>
+    <description>Bingkai Mi al Huda karangwuni</description>
     <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
         Apache Cordova Team
     </author>
     <content src="index.html" />
+    <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
     <platform name="android">
-        <preference name="AndroidPersistentFileLocation" value="Internal" />
+        <allow-intent href="market:*" />
+        <icon density="ldpi" src="resources/android/icon/36.png" />
+        <icon density="mdpi" src="resources/android/icon/48.png" />
+        <icon density="hdpi" src="resources/android/icon/72.png" />
+        <icon density="xhdpi" src="resources/android/icon/96.png" />
+        <icon density="xxhdpi" src="resources/android/icon/144.png" />
+        <icon density="xxxhdpi" src="resources/android/icon/192.png" />
         <preference name="AndroidPersistentFileLocation" value="Compatibility" />
         <preference name="DisallowOverscroll" value="true" />
-        <preference name="StatusBarOverlaysWebView" value="false" />
-        <preference name="StatusBarBackgroundColor" value="#f44336" />
-        <preference name="StatusBarStyle" value="lightcontent" />
-        <preference name="StatusBarDefaultScrollToTop" value="false" />
-        <preference name="NavigationBarBackgroundColor" value="#f44336" />
-        <preference name="NavigationBarLight" value="true" />
-        <preference name="HeaderColor" value="#f44336" />
         <preference name="KeepRunning" value="true" />
         <preference name="LoadingDialog" value="Bismillah...!" />
         <preference name="ErrorUrl" value="file:///android_asset/www/index.html" />
@@ -28,5 +32,9 @@
         <preference name="AppendUserAgent" value="My Browser" />
         <preference name="android-targetSdkVersion" value="30" />
         <preference name="AndroidXEnabled" value="true" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
     </platform>
 </widget>

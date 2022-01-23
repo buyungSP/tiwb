@@ -39,12 +39,13 @@ shapeList = [
  col = ["white","black","rgb(76, 175, 80)","rgb(139, 195, 74)","rgb(205, 220, 57)","rgb(255, 235, 59)","rgb(255, 193, 7)","rgb(255, 152, 0)","rgb(121, 85, 72)","rgb(96, 125, 139)","rgb(158, 158, 158)","rgb(255, 87, 34)","rgb(244, 67, 54)","rgb(156, 39, 176)","rgb(103, 58, 183)","rgb(33, 150, 243)","rgb(3, 169, 244)","rgb(63, 81, 181)","rgb(233, 30, 99)","rgb(0, 188, 212)","rgb(0, 150, 136)"]
 gracol = [["url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAHUlEQVQ4jWNgYGAQIYAJglEDhoUBg9+FowbQ2gAARjwKARjtnN8AAAAASUVORK5CYII=')"],['linear-gradient(135deg,#334d50 0%,#cbcaa5 100%)',"135deg,#334d50:0,#cbcaa5:100"],['linear-gradient(135deg,#b92b27 0%,#1565C0 100%)',"135deg,#b92b27:0,#1565C0:100"],['linear-gradient(135deg,#659999 0%,#f4791f 100%)',"135deg,#659999:0,#f4791f:100"],['linear-gradient(135deg,#dd3e54 0%,#6be585 100%)',"135deg,#dd3e54:0,#6be585:100"],['linear-gradient(135deg,#009FFF 0%,#ec2F4B 100%)',"135deg,#009FFF:0,#ec2F4B:100"],['linear-gradient(135deg,#005AA7 0%,#FFFDE4 100%)',"135deg,#005AA7:0,#FFFDE4:100"],['linear-gradient(135deg,#FC5C7D 0%,#6A82FB 100%)',"135deg,#FC5C7D:0,#6A82FB:100"]]
 listStyle = [["bold",'format_bold'],["italic",'format_italic'],["underline",'format_underlined'],["linethrough",'format_strikethrough'],["overline",'format_overline']]
-listFont = [["'Open Sans', sans-serif","Open Sans"],["'Oswald', sans-serif","Oswald"],["'Playfair Display', serif","Playfair Display"],["'Cormorant Garamond', serif","Cormorant Garamond"],["Impact, Charcoal, sans-serif","Impact"],["'Lucida Console', Monaco, monospace","Lucida Console"],["'Comic Sans MS', 'Comic Sans', cursive, sans-serif","Comic Sans"],["'Dancing Script', cursive","Dancing Script"],["'Indie Flower', cursive","Indie Flower"],["'Amatic SC', cursive","Amatic SC"],["'Permanent Marker', cursive","Permanent Marker"]]
 listAlign = [["left",'format_align_left'],["center",'format_align_center'],["right",'format_align_right'],["justify",'format_align_justify']]
 position = [["left","align_horizontal_left"],["center-h","align_horizontal_center"],["right","align_horizontal_right"],["top","align_vertical_top"],["center-v","align_vertical_center"],["bottom","align_vertical_bottom"]]
 mirrors = ["flip_left","flip_right","flip_up","flip_down",]
 
             textEditor = [
+                ['#kolomEditor','div',{id:"input"}],
+                ['#input','span',{oninput:"imageEditor.textInputs(this)",type:"text",contenteditable:'true'},'Type me'],
                 ['#kolomButton','button',{onclick:"backed()",id:"back"}],
                 ['#back','span',{class:"material-icons"},'keyboard_arrow_down'],
                 ['#kolomButton','button',{onclick:"coloring('fill')",id:'a1'}],
@@ -53,8 +54,6 @@ mirrors = ["flip_left","flip_right","flip_up","flip_down",]
                 ['#b1','span',{class:"material-icons"},'border_color'],
                 ['#kolomButton','button',{onclick:"coloring('textBackgroundColor',true)",id:'c1'}],
                 ['#c1','span',{class:"material-icons"},'format_color_fill'],
-                ['#kolomButton','button',{onclick:"coloring('textBackgroundColor',true)",id:'c3'}],
-                ['#c3','span',{class:"material-icons"},'palette'],
                 ['#kolomButton','button',{onclick:"show(this,'listStyle')",id:'a2'}],
                 ['#a2','span',{class:"material-icons"},'title'],
                 ['#kolomButton','button',{onclick:"show(this,'listFont')",id:'b2'}],
@@ -91,14 +90,6 @@ mirrors = ["flip_left","flip_right","flip_up","flip_down",]
                 ['#back','span',{class:"material-icons"},'keyboard_arrow_down'],
                 ['#kolomButton','button',{onclick:"effe(this,'colormatrix')",id:'a1'}],
                 ['#a1','span',{class:"material-icons"},'tune'],
-                ['#kolomButton','button',{onclick:"effe(this,'tune')",id:'b1'}],
-                ['#b1','span',{class:"material-icons"},'exposure'],
-                ['#kolomButton','button',{onclick:"effe(this,'remove')",id:'c1'}],
-                ['#c1','span',{class:"material-icons"},'border_style'],
-                ['#kolomButton','button',{onclick:"effe(this,'color')",id:'m1'}],
-                ['#m1','span',{class:"material-icons"},'format_shapes'],
-                ['#kolomButton','button',{onclick:"effe(this,'image')",id:'n1'}],
-                ['#n1','span',{class:"material-icons"},'format_shapes'],
                 ['#kolomButton','button',{id:'d1',onclick:"shadow()"}],
                 ['#d1','span',{class:"material-icons"},'stacked_line_chart'],
                 ['#kolomButton','button',{onclick:"show(this,'opacitys')",id:'e1'}],
@@ -125,8 +116,6 @@ mirrors = ["flip_left","flip_right","flip_up","flip_down",]
                 ['#a1','span',{class:"material-icons"},'format_paint'],
                 ['#kolomButton','button',{onclick:"coloring('stroke')",id:'b1'}],
                 ['#b1','span',{class:"material-icons"},'border_color'],
-                ['#kolomButton','button',{onclick:"coloring('backgroundColor',true)",id:'c1'}],
-                ['#c1','span',{class:"material-icons"},'format_color_fill'],
                 ['#kolomButton','button',{id:'d1',onclick:"shadow()"}],
                 ['#d1','span',{class:"material-icons"},'stacked_line_chart'],
                 ['#kolomButton','button',{onclick:"show(this,'opacitys')",id:'e1'}],
@@ -148,13 +137,13 @@ mirrors = ["flip_left","flip_right","flip_up","flip_down",]
             ]
 
             menuButton = [
-                ['#kolomButton','button',{onclick:"ImageEditor.selects()",id:"select"}],
+                ['#kolomButton','button',{onclick:"imageEditor.selects()",id:"select"}],
                 ['#select','span',{class:"material-icons"},'touch_app'],
-                ['#kolomButton','button',{onclick:"ImageEditor.uploads()",id:'upload'}],
-                ['#upload','span',{class:"material-icons"},'add_photo_alternate'],
+                ['#kolomButton','button',{onclick:"evente()",id:'events'}],
+                ['#events','span',{class:"material-icons"},'event'],
                 ['#kolomButton','button',{onclick:"uploaded()",id:'uploadA'}],
-                ['#uploadA','span',{class:"material-icons"},'filter_frames'],
-                ['#kolomButton','button',{onclick:"ImageEditor.texts()",id:'textbox'}],
+                ['#uploadA','span',{class:"material-icons"},'add_photo_alternate'],
+                ['#kolomButton','button',{onclick:"imageEditor.texts()",id:'textbox'}],
                 ['#textbox','span',{class:"material-icons"},'text_fields'],
                 ['#kolomButton','button',{id:'shapes',onclick:"scrolls()"}],
                 ['#shapes','span',{class:"material-icons"},'insert_emoticon'],
@@ -164,14 +153,8 @@ mirrors = ["flip_left","flip_right","flip_up","flip_down",]
                 ['#spray','span',{class:"material-icons"},'brush'],
                 ['#kolomButton','button',{onclick:"draws(this)",id:'circle'}],
                 ['#circle','span',{class:"material-icons"},'draw'],
-                ['#kolomButton','button',{onclick:"draws(this)",id:'line'}],
-                ['#line','span',{class:"material-icons"},'show_chart'],
-                ['#kolomButton','button',{onclick:"draws(this)",id:'path'}],
-                ['#path','span',{class:"material-icons"},'timeline'],
                 ['#kolomButton','button',{id:'erase',onclick:"draws(this)"}],
                 ['#erase','span',{class:"material-icons"},'auto_fix_normal'],
-                ['#kolomButton','button',{id:'background-color'}],
-                ['#background-color','span',{class:"material-icons"},'palette'],
             ]
 
                     fil = [
@@ -190,3 +173,247 @@ mirrors = ["flip_left","flip_right","flip_up","flip_down",]
                         ['new fabric.Image.filters.Convolute({matrix: [  0, -1,  0,-1,  5, -1,0, -1,  0 ]})','sharpen'],
                         ['new fabric.Image.filters.Convolute({matrix: [ 1,   1,  1,1, 0.7, -1,-1,  -1, -1 ]})','emboss'],
                     ]
+listFont = [
+    ["Open Sans, sans-serif","Open Sans"],
+    ["Oswald, sans-serif","Oswald"],
+    ["Playfair Display, serif","Playfair Display"],
+    ["Cormorant Garamond, serif","Cormorant Garamond"],
+    ["Impact, Charcoal, sans-serif","Impact"],
+    ["Lucida Console, Monaco, monospace","Lucida Console"],
+    ["Comic Sans MS, 'Comic Sans', cursive, sans-serif","Comic Sans"],
+    ["Dancing Script, cursive","Dancing Script"],
+    ["Indie Flower, cursive","Indie Flower"],
+    ["Amatic SC, cursive","Amatic SC"],
+    ["Permanent Marker, cursive","Permanent Marker"],
+    ['Asgard Wide Xlight','Asgard'],
+    ['Autografia PERSONAL USE ONLY','Autografia'],
+    ['Boldness Race','Race'],
+    ['Alrighton DEMO','Alrighton'],
+    ['DINO SKY','DINO SKY'],
+    ['Gonzi Expanded PERSONAL USE','Gonzi'],
+    ['Hello Almeida','Hello Almeida'],
+    ['No Flicking Thanks!','No Flicking Thanks!'],
+    ['Justicia','Justicia'],
+    ['Make the Best - Personal Use','Make the Best'],
+    ['Rockabilly','Rockabilly'],
+    ['Speedway','Speedway'],
+    ['Perpetrator','Perpetrator'],
+    ['Taco Crispy','Taco Crispy'],
+    ['Darks_Calibri_Remix','Darks Calibri Remix'],
+    ['Didot','Didot'],
+    ['Garamond','Garamond'],
+    ['Geneva','Geneva'],
+    ['Havirov','Havirov'],
+    ['Luis Candara','Luis Candara'],
+    ['Mt. Blevas','Mt. Blevas'],
+    ['Lucida Bright','Lucida Bright'],
+    ['OPTICopperplate','OPTICopperplate'],
+    ['Pixelated Arial Bold 11','Pixelated']
+]
+
+
+        hari =    {
+            '1':{
+                '3 Januari':[
+                    'Hari Departemen Agama Republik Indonesia'
+                    ],
+                '5 Januari':[
+                    'Hari Korps Wanita Angkatan Laut'
+                    ],
+                '10 Januari':[
+                    'Hari Gerakan Satu Juta Pohon',
+                    'Hari Tritura',
+                    'Hari Lingkungan Hidup Indonesia'
+                    ],
+                '15 Januari':[
+                    'Hari Peristiwa Laut dan Samudera atau Hari Dharma Samudera',
+                    'Hari Gizi Nasional',
+                    'Hari Kusta Internasional'
+                    ],
+                '26 Januari':[
+                    'Hari Kepabeanan Internasional[pranala nonaktif permanen]'
+                    ],
+            },
+            '2':{
+                '5 Februari':[
+                    'Hari Peristiwa Kapal Tujuh, Hari Lahir Himpunan Mahasiswa Islam (HMI)'
+                    ],
+                '9 Februari':[
+                    'Hari Kavaleri',
+                    'Hari Pers Nasional'
+                    ],
+                '14 Februari':[
+                    'Hari Peringatan Pembela Tanah Air (PETA)'
+                    ],
+                '20 Februari':[
+                    'Hari Pekerja Indonesia'
+                    ],
+                '21 Februari':[
+                    'Hari Bahasa Ibu','Hari Peduli Sampah Nasional'
+                    ],
+                '22 Februari':['Hari Istiqlal'],
+                '24 Februari':['Hari lahir Ikatan Pelajar Nahdlatul Ulama']
+            },
+            '3':{
+                '1 Maret':['Hari Kehakiman Nasional','Hari Peringatan Serangan Umum di Yogyakarta'],
+                '6 Maret':['Hari Komando Strategis Angkatan Darat (Kostrad)'],
+                '8 Maret':['Hari Wanita/Perempuan Internasional'],
+                '9 Maret':['Hari Musik Nasional'],
+                '10 Maret':['Hari Persatuan Artis Film Indonesia (Parfi)'],
+                '11 Maret':['Hari Surat Perintah Sebelas/3 (Supersemar)'],
+                '21 Maret':['Hari Sindrom Down[9]','Hari Teater Boneka','Hari Penghapusan Diskriminasi Rasial Sedunia'],
+                '22 Maret':['Hari Air Sedunia[10]'],
+                '23 Maret':['Hari Meteorologi Sedunia, hari lahir Gerakan Mahasiswa Nasional Indonesia (GMNI)'],
+                '24 Maret':['Hari Peringatan Bandung Lautan Api'],
+                '27 Maret':['Hari Teater Sedunia','Hari Klub Wanita Internasional (bahasa Inggris: Women International Club Day - WIC)'],
+                '29 Maret':['Hari Filateli Indonesia, hari Lahir Kesatuan Aksi Mahasiswa Muslim Indonesia (KAMMI).'],
+                '30 Maret':['Hari Film Nasional']
+            },
+            '4':{
+                '1 April':['Hari Bank Dunia','Hari Marketing Indonesia (Hamari),[12] Hari Penyiaran Nasional[13]'],
+                '6 April':['Hari Nelayan Nasional'],
+                '7 April':['Hari Kesehatan Internasional'],
+                '9 April':['Hari Penerbangan Nasional','Hari TNI Angkatan Udara'],
+                '12 April':['Hari Bawa Bekal Nasional'],
+                '16 April':['Hari Komando Pasukan Khusus (Kopassus)'],
+                '17 April':['Hari Pergerakan Mahasiswa Islam Indonesia PMII'],
+                '18 April':['Hari Peringatan Konferensi Asia Afrika'],
+                '19 April':['Hari Pertahanan Sipil (Hansip)'],
+                '20 April':['Hari Konsumen Nasional'],
+                '21 April':['Hari Kartini'],
+                '22 April':['Hari Bumi'],
+                '23 April':['Hari Buku'],
+                '24 April':['Hari Angkutan Nasional','Hari Solidaritas Asia-Afrika'],
+                '26 April':['Hari Kesiapsiagaan Bencana Nasional'],
+                '27 April':['Hari Pemasyarakatan Indonesia'],
+                '28 April':['Hari Puisi Nasional']
+            },
+            '5':{
+                '1 Mei':['Hari Peringatan Pembebasan Irian Barat','Hari Buruh Sedunia'],
+                '2 Mei':['Hari Pendidikan Nasional (Hardiknas)'],
+                '5 Mei':['Hari Lembaga Sosial Desa (LSD)'],
+                '10 Mei':['Hari Lupus Sedunia'],
+                '11 Mei':['Hari POM - TNI (?)'],
+                '15 Mei':['Hari Korps Resimen Mahadjaya/ Jayakarta (Menwa Jayakarta),'],
+                '16 Mei':['Hari Wanadri'],
+                '17 Mei':['Hari Buku Nasional'],
+                '18 Mei':['Hari Museum Internasional'],
+                '19 Mei':['Hari Korps Cacat Veteran Indonesia'],
+                '20 Mei':['Hari Kebangkitan Nasional','Hari Bakti Dokter Indonesia'],
+                '21 Mei':['Hari Peringatan Reformasi'],
+                '23 Mei':['Hari Penyu Sedunia'],
+                '29 Mei':['Hari Keluarga, Hari Lanjut Usia'],
+                '31 Mei':['Hari Tanpa Tembakau Sedunia']
+            },
+            '6':{
+                '1 Juni':['Hari Lahir Pancasila','Hari Perlindungan Anak-anak Sedunia','Hari Susu Nusantara'],
+                '3 Juni':['Hari Pasar Modal Indonesia'],
+                '5 Juni':['Hari Lingkungan Hidup Sedunia'],
+                '8 Juni':['Hari Laut Sedunia'],
+                '10 Juni':['Hari Media Sosial'],
+                '15 Juni':['Hari Demam Berdarah Dengue ASEAN'],
+                '17 Juni':['Hari Dermaga'],
+                '21 Juni':['Hari Krida Pertanian'],
+                '22 Juni':['Hari Ulang Tahun Kota Jakarta (sejak tahun 1527)'],
+                '24 Juni':['Hari Bidan Nasional'],
+                '26 Juni':['Hari Anti Narkoba'],
+                '29 Juni':['Hari Keluarga Berencana']
+            },
+            '7':{
+                '1 Juli':['Hari Bhayangkara','Hari Buah'],
+                '2 Juli':['Hari Kelautan Nasional'],
+                '5 Juli':['Hari Bank Indonesia'],
+                '9 Juli':['Hari Satelit Palapa'],
+                '12 Juli':['Hari Koperasi'],
+                '14 Juli':['Hari Pajak'],
+                '22 Juli':['Hari Kejaksaan'],
+                '23 Juli':['Hari Anak Nasional','Hari Komite Nasional Pemuda Indonesia (KNPI)'],
+                '27 Juli':['Hari Sungai Nasional'],
+                '29 Juli':['Hari Bhakti TNI Angkatan Udara'],
+                '31 Juli':['Hari Lahir Korps Pelajar Islam Indonesia (PII) Wati']
+            },
+            '8':{
+                '5 Agustus':['Hari Dharma Wanita Nasional'],
+                '8 Agustus':['Hari Ulang Tahun ASEAN'],
+                '10 Agustus':['Hari Veteran Nasional','Hari Kebangkitan Teknologi Nasional'],
+                '12 Agustus':['Hari Wanita TNI Angkatan Udara (Wara)'],
+                '13 Agustus':['Hari Peringatan Pangkalan Brandan Lautan Api'],
+                '14 Agustus':['Hari Pramuka'],
+                '17 Agustus':['Hari Proklamasi Kemerdekaan Republik Indonesia (sejak tahun 1945)'],
+                '18 Agustus':['Hari Konstitusi Republik Indonesia (sejak tahun 1945)'],
+                '19 Agustus':['Hari Departemen Luar Negeri Indonesia'],
+                '21 Agustus':['Hari Maritim Nasional']
+            },
+            '9':{
+                '1 September':['Hari Buruh','Hari Polisi Wanita (Polwan)'],
+                '8 September':['Hari Aksara','Hari Pamong Praja'],
+                '9 September':['Hari Olahraga Nasional'],
+                '11 September':['Hari Radio Republik Indonesia (RRI)','Hari Peringatan Serangan 11/9 2001'],
+                '17 September':['Hari Palang Merah Indonesia','Hari Perhubungan Nasional'],
+                '21 September':['Hari Perdamaian Dunia'],
+                '23 September':['Hari Bahasa Isyarat Internasional'],
+                '24 September':['Hari Tani'],
+                '26 September':['Hari Statistik'],
+                '27 September':['Hari Pos Telekomunikasi Telegraf (PTT)'],
+                '28 September':['Hari Kereta Api','Hari Komunitas Nasional','Hari Rabies Sedunia','Hari Tunarungu Internasional'],
+                '29 September':['Hari Sarjana Nasional','Hari Jantung Sedunia'],
+                '30 September':['Hari Peringatan Gerakan 30/9 1965']
+            },
+            '10':{
+                '(Setiap Hari Senin Pertama Oktober)':['Hari Habitat'],
+                '1 Oktober':['Hari Kesaktian Pancasila','Hari Bea dan Cukai'],
+                '2 Oktober':['Hari Batik Nasional'],
+                '4 Oktober':['Hari Hewan Sedunia'],
+                '5 Oktober':['Hari Tentara Nasional Indonesia (TNI)'],
+                '(Setiap Hari Kamis Kedua Oktober)':['Hari Mata Sedunia'],
+                '10 Oktober':['Hari Kesehatan Jiwa'],
+                '12 Oktober':['Hari Museum Nasional','Hari Radang Sendi (Artritis) Sedunia'],
+                '15 Oktober':['Hari Hak Asasi Binatang'],
+                '16 Oktober':['Hari Parlemen Indonesia','Hari Pangan Sedunia'],
+                '22 Oktober':['Hari Santri Nasional'],
+                '24 Oktober':['Hari Dokter Nasional','Hari Perserikatan Bangsa-Bangsa (PBB)','Hari Polio Sedunia'],
+                '27 Oktober':['Hari Listrik Nasional','Hari Penerbangan Nasional','Hari Narablog Nasional'],
+                '28 Oktober':['Hari Sumpah Pemuda'],
+                '29 Oktober':['Hari Stroke Sedunia'],
+                '30 Oktober':['Hari Keuangan'],
+                '31 Oktober':['Hari Halloween']
+            },
+            '11':{
+                '1 November':['Hari Inovasi Indonesia'],
+                '5 November':['Hari Cinta Puspa dan Satwa Nasional'],
+                '10 November':['Hari Pahlawan (Indonesia)','Hari Ganefo'],
+                '11 November':['Hari Bangunan Indonesia'],
+                '12 November':['Hari Ayah Nasional','Hari Kesehatan Nasional'],
+                '14 November':['Hari Brigade Mobil (BRIMOB)','Hari Diabetes internasional'],
+                '16 November':['Hari Toleransi Internasional'],
+                '19 November':['Hari Pria/Laki-laki Internasional'],
+                '20 November':['Hari Anak-anak Sedunia'],
+                '21 November':['Hari Pohon'],
+                '22 November':['Hari Perhubungan Darat'],
+                '25 November':['Hari Guru'],
+                '28 November':['Hari Menanam Pohon Indonesia','Hari Dongeng Nasional'],
+                '29 November':['Hari Korps Pegawai Republik Indonesia (KORPRI)']
+            },
+            '12':{
+                '1 Desember':['Hari AIDS Sedunia'],
+                '3 Desember':['Hari Penyandang Cacat Internasional'],
+                '4 Desember':['Hari Artileri'],
+                '5 Desember':['Hari Armada'],
+                '9 Desember':['Hari Anti-Korupsi Sedunia'],
+                '10 Desember':['Hari Hak Asasi Manusia'],
+                '12 Desember':['Hari Transmigrasi','Hari Belanja Online Nasional (Harbolnas)'],
+                '13 Desember':['Hari Nusantara'],
+                '14 Desember':['Hari Sejarah Nasional'],
+                '15 Desember':['Hari Infanteri[butuh rujukan]'],
+                '19 Desember':['Hari Bela Negara'],
+                '20 Desember':['Hari Kesetiakawanan Sosial Nasional'],
+                '22 Desember':[
+                    'Hari Ibu Nasional',
+                    'Hari Sosial',
+                    'Hari Korps Wanita Angkatan Darat (KOWAD)'
+                    ],
+                '25 Desember':[
+                    'Hari Natal'
+                ]
+            },
+        }

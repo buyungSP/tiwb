@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="lib/font.css">
+        <script src="cordova.js"></script>
+        <script src="home.js"></script>
+        <title>Hello World</title>
+        <style type="text/css">
+            body,html,*{
+                margin: 0;
+                box-sizing: border-box;
+            }
+            * {
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+            html{
+                width:100%;
+                margin: 0;
+                padding: 0;
+                background-color: transparent;
+                font-family: sans-serif;
+                -ms-text-size-adjust: 100%;
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            }
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                color: #333;
+                font-weight: 400;
+                background-color: transparent;
+            }
+            @font-face {
+                font-family: 'Material Icons';
+                font-style: normal;
+                font-weight: 400;
+                src: url(font.woff2) format('woff2');
+            }
+            .material-icons {
+                font-family: 'Material Icons';
+                font-weight: normal;
+                font-style: normal;
+                font-size: 24px;
+                line-height: 1;
+                letter-spacing: normal;
+                text-transform: none;
+                display: inline-block;
+                white-space: nowrap;
+                word-wrap: normal;
+                direction: ltr;
+                -moz-font-feature-settings: 'liga';
+                -moz-osx-font-smoothing: grayscale;
+                box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.7)
+            }
+            #galeriButton{
+                position: relative;
+                float: right;
+                background-color: transparent;
+                border: none;
+                padding: 5px;
+                margin: 5px;
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+            }
+            #switchCameraButton,#flashModeButton{
+                position: relative;
+                float: left;
+                background-color: transparent;
+                border: none;
+                padding: 5px;
+                margin: 5px;
+                width: 40px;
+                height: 40px;
+            }
+            #tom{
+                position: relative;
+                float: left;
+                width: 100px;
+                height: 80px
+            }
+            #take{
+                position: relative;
+                float: left;
+                width: calc(100% - 200px);
+                display: flex;
+                justify-content: center;
+                height: 80px
+            }
+            #takePictureButton{
+                border:none;
+                border-radius: 50%;
+                background-color: transparent;
+                border:4px solid;
+                height: 70px;
+                width: 70px;
+                box-shadow: 0px 0px 6px rgba(0,0,0,0.7);
+            }
+            footer{
+                background-color: #fff;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%
+            }
+            nav{
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%
+            }
+            #control{
+                position: relative;
+                float: right;
+                width: 100%;
+                height: 100px;
+                overflow-x: scroll;
+                overflow-y: hidden;
+                white-space: nowrap;
+                padding: 5px
+            }
+            .efek{
+                display: inline-block;
+                width: 100px;
+                height: 100%;
+                padding: 5px;
+                background-repeat: no-repeat;
+                background-size: contain;
+                box-shadow: 0px 0px 6px rgba(250,250,250,0.7);
+                border:none;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            #imgs{
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 100;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                background-color: black
+            }
+            #forms{
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                height: 50px;
+                width: 100%;
+                padding: 5px;
+                z-index: 110
+            }
+            #inputs{
+                position: relative;
+                float: left;
+                width: calc(100% - 40px);
+                height: 100%;
+                padding: 0 20px;
+                border:none;
+                border-radius: 20px
+            }
+            #buttons{
+                position: relative;
+                float: left;
+                width: 40px;
+                height: 100%;
+                line-height: 40px;
+                border-radius: 50%;
+                border:none;
+                text-align: center;
+            }
+            #buttons span{
+                line-height: 40px
+            }
+            object{
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: auto;
+                z-index: 100
+            }
+        </style>
+    </head>
+    <body>
+        <object id="border" type="image/svg+xml"></object>
+        <footer>
+            <div id="control" >
+            </div>
+            <div id="tom">
+                <button id="switchCameraButton" onclick="CameraPreview.switchCamera()" class="material-icons">cameraswitch</button>
+                <button id="flashModeButton" onclick="flashMode()" value="0" class="material-icons">flash_off</button>
+            </div>
+            <div id="take">
+                <button id="takePictureButton" onclick="CameraPreview.takePicture({width:640, height:640, quality: 100},setCanvas)"></button>
+            </div>
+            <div id="tom">
+                <button id="galeriButton" onclick="galeri()" class="material-icons">image</button>
+            </div>
+        </footer>
+        <script type="text/javascript">
+            sistem = () =>{
+                startCamera()
+                for(a = 1; a <= 56;a++){
+                    b = document.createElement('div')
+                    b.style.backgroundImage = `url(svg/tiwb${a}.svg)`
+                    b.setAttribute('onclick',`setTwib(${a})`)
+                    b.className = 'efek'
+                    control.appendChild(b)
+                }
+                border.data = `svg/tiwb1.svg`
+            }
+            setTwib = a =>{
+                border.data = `svg/tiwb${a}.svg`
+            }
+            showCam = () =>{
+                CameraPreview.show()
+            }
+            startCamera = () =>{
+                CameraPreview.startCamera({
+                    x: 0,
+                    y: 50,
+                    width: window.innerWidth,
+                    height: window.innerWidth,
+                    camera: 'back',
+                    toBack: true,
+                    tapPhoto: false,
+                    tapFocus: true,
+                    previewDrag: false,
+                    storeToFile: false,
+                    disableExifHeaderStripping: false
+                });
+                showCam()
+            }
+            flashMode = () =>{
+                flashModeButton.value = flashModeButton.value == 4? 0 : parseInt(flashModeButton.value) + parseInt(1)
+                flashModeButton.innerHTML = ['flash_off','flash_on','flash_auto','bolt','remove_red_eye'][flashModeButton.value]
+                CameraPreview.setFlashMode(['off','on','auto','torch','red-eye'][flashModeButton.value])
+            }
+            galeri = () =>{
+                chooser.getFile('image/*',files => {
+                    if(!files){
+                        showCam()
+                    }else{
+                        CameraPreview.stopCamera()
+                    }
+                    file = {
+                        id : Date.now(),
+                        back : files.dataURI,
+                        fore : border.contentDocument.documentElement.outerHTML
+                    }
+                    sessionStorage.setItem('file',JSON.stringify(file))
+                    window.location.href = 'editor.html'
+                })
+            }
+            setCanvas = data =>{
+                CameraPreview.stopCamera()
+                file = {
+                    id : Date.now(),
+                    back : "data:image/png;base64," + data,
+                    fore : border.contentDocument.documentElement.outerHTML
+                }
+                sessionStorage.setItem('file',JSON.stringify(file))
+                window.location.href = 'editor.html'
+            }
+            stopCamera = () =>{
+                window.history.back()
+            }
+            error = a =>{
+                navigator.notification.alert('Oh no ! Something Went Wrong.',false,'Failed','Try Again')
+            }
+            document.addEventListener('deviceready', sistem, false);
+            document.addEventListener("backbutton", stopCamera, false)
+        </script>
+    </body>
+</html>

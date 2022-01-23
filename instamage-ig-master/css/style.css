@@ -1,0 +1,128 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    font-size: 14px;
+}
+
+#LinkArea {
+    height: 70%;
+    text-align: center;
+
+    display: flex;
+    flex-flow: column;
+    background-image: url(../img/bg.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100%;
+}
+
+form {
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 90%;
+    top: 30%;
+}
+
+input[type="text"] {
+    background-color: #16161d;
+    border-style: solid;
+    height: 30px;
+    border-color: #000000;
+    color: #909090;
+}
+
+div.scrollMenu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #16161d;
+    overflow: auto;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+div.scrollMenu  a {
+    display: inline-block;
+    color: #ffffff;
+    text-align: center;
+    padding: 5% 5%;
+    text-decoration: none;
+}
+
+div.scrollMenu  a:hover {
+    color: #15d4ee;
+    background-color: #000000;
+}
+
+#getImage {
+    color: #008CBA;
+    background-color: #16161d;
+    border: none;
+    padding: 15px 32px;
+}
+
+#getImage:hover {
+    background-color: #0b0b0e;
+    color: #41add0;
+}
+
+section {
+    background-color: #ffffff;
+    padding: 10% 10% 10% 10%;
+    position: relative;
+    line-height: 30px;
+    -moz-user-select: text;
+    -webkit-user-select: text;
+    user-select: text;
+}
+
+.icone, i {
+    font-size: 15vw;
+}
+
+h1 {
+    color: #ffffff;
+}
+
+p {
+    text-indent: 1cm;
+}
+
+#footer {
+    color: white;
+    text-align: center;
+    background-color: #16161d;
+    padding: 15px 32px;
+    margin: 0;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+@media only screen and ( min-width: 900px) {    /*desktop*/
+    section {
+        padding: 10% 15% 10% 15%;
+    }
+    body {
+        font-size: 20px;
+    }
+    form {
+        top: 50%;
+        width: 60%;
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+    div.scrollMenu  a {
+        padding: 2% 2%;
+    }
+}

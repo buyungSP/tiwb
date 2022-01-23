@@ -1,0 +1,206 @@
+
+@font-face {
+    font-family: 'Asgard Wide';
+    src: url('AsgardTrial-WideRegular.woff2') format('woff2'),
+        url('AsgardTrial-WideRegular.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Autografia PERSONAL USE ONLY';
+    src: url('AutografiaPERSONALUSEONLY-Thin.woff2') format('woff2'),
+        url('AutografiaPERSONALUSEONLY-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Boldness Race';
+    src: url('BoldnessRaceRegular.woff2') format('woff2'),
+        url('BoldnessRaceRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Alrighton DEMO';
+    src: url('AlrightonDEMO.woff2') format('woff2'),
+        url('AlrightonDEMO.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DINO SKY';
+    src: url('DINOSKYRegular.woff2') format('woff2'),
+        url('DINOSKYRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Gonzi Expanded PERSONAL USE';
+    src: url('GonziExpandedPERSONALUSE-Regular.woff2') format('woff2'),
+        url('GonziExpandedPERSONALUSE-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Hello Almeida';
+    src: url('HelloAlmeida-Regular.woff2') format('woff2'),
+        url('HelloAlmeida-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'No Flicking Thanks!';
+    src: url('NoFlickingThanks.woff2') format('woff2'),
+        url('NoFlickingThanks.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Justicia';
+    src: url('Justicia.woff2') format('woff2'),
+        url('Justicia.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Make the Best - Personal Use';
+    src: url('MaketheBestPersonalUse.woff2') format('woff2'),
+        url('MaketheBestPersonalUse.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Rockabilly';
+    src: url('Rockabilly.woff2') format('woff2'),
+        url('Rockabilly.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Speedway';
+    src: url('Speedway.woff2') format('woff2'),
+        url('Speedway.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Perpetrator';
+    src: url('Perpetrator-Regular.woff2') format('woff2'),
+        url('Perpetrator-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Taco Crispy';
+    src: url('TacoCrispy.woff2') format('woff2'),
+        url('TacoCrispy.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Darks_Calibri_Remix';
+    src: url('Darks_Calibri_Remix.woff2') format('woff2'),
+        url('Darks_Calibri_Remix.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Didot';
+    src: url('Didot-HTF-L06-Light.woff2') format('woff2'),
+        url('Didot-HTF-L06-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond';
+    src: url('Garamond.woff2') format('woff2'),
+        url('Garamond.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Geneva';
+    src: url('Geneva.woff2') format('woff2'),
+        url('Geneva.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Havirov';
+    src: url('Havirov.woff2') format('woff2'),
+        url('Havirov.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lucida Bright';
+    src: url('LucidaBright.woff2') format('woff2'),
+        url('LucidaBright.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Luis Candara';
+    src: url('LuisCandara.woff2') format('woff2'),
+        url('LuisCandara.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mt. Blevas';
+    src: url('MtBlevas.woff2') format('woff2'),
+        url('MtBlevas.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'OPTICopperplate';
+    src: url('OPTICopperplate.woff2') format('woff2'),
+        url('OPTICopperplate.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pixelated Arial Bold 11';
+    src: url('Pixelated-Arial-Bold-11.woff2') format('woff2'),
+        url('Pixelated-Arial-Bold-11.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
